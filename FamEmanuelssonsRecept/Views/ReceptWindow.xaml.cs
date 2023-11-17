@@ -22,10 +22,10 @@ namespace FamEmanuelssonsRecept.Windows
     public partial class ReceptWindow : Window
     {
         
-
         public ReceptWindow()
         {
             InitializeComponent();
+
             this.DataContext = DbHelper.SelectedRecipe;
         }
 

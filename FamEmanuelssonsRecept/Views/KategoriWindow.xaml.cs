@@ -32,31 +32,39 @@ namespace FamEmanuelssonsRecept.Windows
             this.DataContext = this;
 
         }
-
-        private void MainWindowBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-
-
-        }
-
+      
         private async Task AddCategory()
         {
+            try
+            {
+                var categoryName = CategoryTextBox.Text;
+                if (!string.IsNullOrWhiteSpace(categoryName))
+                {
+                    Category newCategory = new Category(categoryName);
+
+                    RecipeDbContext._DbContext._Categories.Add(newCategory);
+
+                    await RecipeDbContext._DbContext.SaveChangesAsync();
+
+                    CategoryListView.ItemsSource = DbHelper.LoadCategories();
+
+                    MessageBox.Show($"Ny kategori {newCategory.Name} tillagd!");
+                }
+                else
+                {
+                    MessageBox.Show("Glöm inte att namnge din kategori!");
+                    return;
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Det gick inte att lägga till nu. Var god försök senare.");              
+            }
             
 
-            var categoryName = CategoryTextBox.Text;
-            Category newCategory = new Category(categoryName);
-            RecipeDbContext._DbContext._Categories.Add(newCategory);
-            await RecipeDbContext._DbContext.SaveChangesAsync();
-            CategoryListView.ItemsSource = DbHelper.LoadCategories();
+            
            
-        }
-
-        private async void AddCategoryBtn_Click(object sender, RoutedEventArgs e)
-        {
-            await AddCategory();
         }
 
         private async Task DeleteCategory()
@@ -65,19 +73,40 @@ namespace FamEmanuelssonsRecept.Windows
 
             if (selectedCategory != null)
             {
-                RecipeDbContext._DbContext._Categories.Remove(selectedCategory);
-                await RecipeDbContext._DbContext.SaveChangesAsync();
-               
-                CategoryListView.ItemsSource = DbHelper.LoadCategories();
-               
+                try
+                {
+                    RecipeDbContext._DbContext._Categories.Remove(selectedCategory);
+
+                    await RecipeDbContext._DbContext.SaveChangesAsync();
+
+                    CategoryListView.ItemsSource = DbHelper.LoadCategories();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Denna kategori har recept kopplade till sig. Vänligen ta bort dessa recept innan du tar bort kategorin.");
+                }          
             }
         }
+
+
+        private async void AddCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            await AddCategory();
+        }
+
 
         private async void RemoveCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             await DeleteCategory();
         }
 
-        
+        private void MainWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+
+        }
     }
 }

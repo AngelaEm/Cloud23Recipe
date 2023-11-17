@@ -32,13 +32,7 @@ namespace FamEmanuelssonsRecept.Views
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
+       
         private async Task EditRecipe()
         {
             DbHelper.SelectedRecipe.Name = RecipeNameTextBox.Text;
@@ -46,7 +40,9 @@ namespace FamEmanuelssonsRecept.Views
             DbHelper.SelectedRecipe.Description = DescriptionTextBox.Text;
             
             var gradeTextBox = GradeTextBox.Text;
+
             double grade;
+
             if (double.TryParse(gradeTextBox, out grade))
             {
                 DbHelper.SelectedRecipe.Grade = grade;
@@ -83,9 +79,12 @@ namespace FamEmanuelssonsRecept.Views
         private async void EditRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             await EditRecipe();
+
             DbHelper.SelectedRecipe = null;
             DbHelper.SelectedCategory = null;
+
             MessageBox.Show("Successfully changed!");
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
@@ -98,8 +97,7 @@ namespace FamEmanuelssonsRecept.Views
             if (DbHelper.SelectedRecipe != null)
             {
                 RecipeDbContext._DbContext._Recipes.Remove(DbHelper.SelectedRecipe);
-                await RecipeDbContext._DbContext.SaveChangesAsync();
-               
+                await RecipeDbContext._DbContext.SaveChangesAsync();              
             }
 
             MainWindow mainWindow = new MainWindow();
@@ -109,11 +107,18 @@ namespace FamEmanuelssonsRecept.Views
         }
 
         private async void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //testcvcvc
+        {        
             await DeleteRecipe();
         }
 
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+
+
     }
 }

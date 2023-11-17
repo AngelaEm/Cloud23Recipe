@@ -59,9 +59,9 @@ namespace FamEmanuelssonsRecept
         {
             Random random = new Random();
             List<Recipe> recipes = DbHelper.LoadRecipes();
-            var randomInex = random.Next(1, recipes.Count+1);
+            var randomIndex = random.Next(1, recipes.Count+1);
 
-            Recipe randomRecipe = recipes.FirstOrDefault(r => r.Id == recipes[randomInex].Id);
+            Recipe randomRecipe = recipes.FirstOrDefault(r => r.Id == recipes[randomIndex].Id);
 
             DbHelper.SelectedRecipe = randomRecipe;
 
@@ -74,19 +74,10 @@ namespace FamEmanuelssonsRecept
         private void SearchRecipe()
         {
             var searchWord = SearchRecipeTextBox.Text;
-            List<Recipe> recipes = DbHelper.LoadRecipes();
-            List<Recipe> selectedRecipes = new List<Recipe>();
-            var searchResult = recipes.FindAll(r => r.Ingredients.ToLower().Contains(searchWord.ToLower()));
-            //foreach (var r in recipes)
-            //{
-            //    if (r.Ingredients.ToLower().Contais(searchWord.ToLower()))
-            //    {
-            //        selectedRecipes.Add(r);
-            //    }
-            //}
-            //ReceptListView.ItemsSource = selectedRecipes;
-
-                ReceptListView.ItemsSource = searchResult.ToList();
+           
+            var searchResult = RecipeDbContext._DbContext._Recipes.ToList().FindAll(r => r.Ingredients.ToLower().Contains(searchWord.ToLower()));
+           
+            ReceptListView.ItemsSource = searchResult.ToList();
 
 
         }

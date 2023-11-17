@@ -38,7 +38,9 @@ namespace FamEmanuelssonsRecept.Views
             var ingredients = IngredientsTextBox.Text;
             var description = DescriptionTextBox.Text;
             var gradeTextBox = GradeTextBox.Text;
+
             double grade;
+
             if (!double.TryParse(gradeTextBox, out grade))
             {
                 grade = 10;
@@ -58,16 +60,20 @@ namespace FamEmanuelssonsRecept.Views
                 newRecipe.ImagePath = "/Images/middag.png";
             }
 
-
-
             var category = CategoryComboBox.SelectedItem as Category;
 
             if (category != null)
             {
                 newRecipe.Category = category;
             }
+            else
+            {
+                MessageBox.Show("Obs, välj kategori!");
+                return;
+            }
 
             RecipeDbContext._DbContext._Recipes.Add(newRecipe);
+
             await RecipeDbContext._DbContext.SaveChangesAsync();
             
         }

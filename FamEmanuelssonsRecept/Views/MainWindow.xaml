@@ -70,7 +70,8 @@
                   Grid.Column="3"
                   Grid.Row="6"
                   Grid.RowSpan="10"
-                  Width="160">
+                  Width="160"
+                  Height="250">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Recept" DisplayMemberBinding="{Binding Name}" />

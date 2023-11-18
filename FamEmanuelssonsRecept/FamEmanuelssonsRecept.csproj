@@ -9,11 +9,14 @@
 
   <ItemGroup>
     <None Remove="Images\bananpannkakor.png" />
+    <None Remove="Images\calzone.png" />
+    <None Remove="Images\cornFlakesKakor.png" />
     <None Remove="Images\familjen.png" />
     <None Remove="Images\middag.png" />
     <None Remove="Images\overnightOats.png" />
     <None Remove="Images\padThai.png" />
     <None Remove="Images\quorn.png" />
+    <None Remove="Images\tacoGratang.png" />
     <None Remove="Images\vegetariskLasagne.png" />
   </ItemGroup>
 
@@ -30,6 +33,12 @@
     <Content Include="Images\bananpannkakor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\calzone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cornFlakesKakor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\familjen.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -43,6 +52,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\quorn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tacoGratang.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\vegetariskLasagne.png">

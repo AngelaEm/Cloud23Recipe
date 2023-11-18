@@ -59,8 +59,10 @@ namespace FamEmanuelssonsRecept
         {
             Random random = new Random();
             List<Recipe> recipes = DbHelper.LoadRecipes();
-            var randomIndex = random.Next(1, recipes.Count+1);
+            var randomIndex = random.Next(0, recipes.Count);
 
+            try
+            {
             Recipe randomRecipe = recipes.FirstOrDefault(r => r.Id == recipes[randomIndex].Id);
 
             DbHelper.SelectedRecipe = randomRecipe;
@@ -69,17 +71,32 @@ namespace FamEmanuelssonsRecept
             receptWindow.Show();
             this.Close();
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Något gick fel, testa igen!");
+            }
         }
 
         private void SearchRecipe()
         {
             var searchWord = SearchRecipeTextBox.Text;
-           
-            var searchResult = RecipeDbContext._DbContext._Recipes.ToList().FindAll(r => r.Ingredients.ToLower().Contains(searchWord.ToLower()));
-           
-            ReceptListView.ItemsSource = searchResult.ToList();
-
-
+            try
+            {
+                var searchResult = RecipeDbContext._DbContext._Recipes.ToList().FindAll(r => r.Ingredients.ToLower().Contains(searchWord.ToLower()));
+                if (searchResult.Count > 0)
+                {
+                    ReceptListView.ItemsSource = searchResult.ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Hittade inga matchande recept tyvärr. Testa annat sökord!");
+                }         
+            }
+            catch (Exception e)
+            {
+               MessageBox.Show(e.Message);          
+            }
         }
 
         private void EditWindowBtn_Click(object sender, RoutedEventArgs e)

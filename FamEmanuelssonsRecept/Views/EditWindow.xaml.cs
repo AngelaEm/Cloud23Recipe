@@ -107,8 +107,19 @@ namespace FamEmanuelssonsRecept.Views
         }
 
         private async void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
-        {        
-            await DeleteRecipe();
+        {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill ta bort detta recept?", "Bekräftelse", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                await DeleteRecipe();
+            }
+            else
+            {
+                return;
+            }
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

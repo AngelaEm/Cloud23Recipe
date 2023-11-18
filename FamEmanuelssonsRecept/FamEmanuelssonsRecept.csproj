@@ -14,6 +14,7 @@
     <None Remove="Images\cornFlakesKakor.png" />
     <None Remove="Images\familjen.png" />
     <None Remove="Images\halloumiStroganoff.png" />
+    <None Remove="Images\kokostoppar.png" />
     <None Remove="Images\Laxwraps.png" />
     <None Remove="Images\middag.png" />
     <None Remove="Images\overnightOats.png" />
@@ -50,6 +51,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\halloumiStroganoff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\kokostoppar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Laxwraps.png">

@@ -10,13 +10,14 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+           
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -43,7 +44,7 @@
 
         <TextBlock Text="Fam Emanuelssons Receptsamling"
                    Style="{StaticResource BasicTextStyle}"
-                   Grid.Column="2" Grid.ColumnSpan="3"
+                   Grid.Column="1" Grid.ColumnSpan="5"
                    Grid.Row="2" FontSize="30"/>
         
         <Image Source="/Images/familjen.png"
@@ -53,14 +54,14 @@
                Height="100"/>
 
         <Label Style="{StaticResource LabelStyle}"
-               Grid.Column="2"
+               Grid.Column="1"
                Grid.Row="6"
                Content="Skriv in ny kategori:"/>
 
         <TextBox x:Name="CategoryTextBox"
                  Style="{StaticResource TextBoxStyle}"
                  Height="30"
-                 Grid.Column="2"
+                 Grid.Column="1"
                  Grid.Row="7"
                  Grid.RowSpan="2"/>
 
@@ -70,7 +71,7 @@
                   Grid.Row="6"
                   Grid.RowSpan="10"
                   Width="150"
-                  Height="150">
+                  Height="220">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Kategori" DisplayMemberBinding="{Binding Name}"/>
@@ -81,14 +82,14 @@
   
         <Button x:Name="AddCategoryBtn"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="2"
+                Grid.Column="1"
                 Grid.Row="10"
                 Height="40"
                 Content="Lägg till Kategori" Click="AddCategoryBtn_Click" />
 
         <Button x:Name="RemoveCategoryBtn"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="4"
+                Grid.Column="5"
                 Grid.Row="10"
                 Height="40"
                 Content="Ta bort Kategori" Click="RemoveCategoryBtn_Click"/>

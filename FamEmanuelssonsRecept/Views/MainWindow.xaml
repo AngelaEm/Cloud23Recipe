@@ -5,62 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamEmanuelssonsRecept"
         mc:Ignorable="d" Background="#84a98c"
-        Title="MainWindow" Height="600" Width="650"
+        Title="MainWindow" Height="600" Width="850"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
+            
         </Grid.RowDefinitions>
 
         <TextBlock Style="{StaticResource BasicTextStyle}"
                    Text="Fam Emanuelssons Receptsamling"
-                   Grid.Column="2" Grid.ColumnSpan="3"
-                   Grid.Row="2" FontSize="30"/>
+                   Grid.Column="1" Grid.ColumnSpan="5"
+                   Margin="70,0,0,0"
+                   Grid.Row="1" FontSize="30"/>
         
         <Image Source="/Images/familjen.png"
-               Grid.Column="3"
-               Grid.Row="4"
-               Width="150"
-               Height="100"/>
+               Grid.Column="1"
+               Grid.ColumnSpan="5"
+               Grid.Row="3"
+               Width="180"
+               Height="120"/>
         
         <ListView x:Name="KategoriListView"  ItemsSource="{Binding Category}" 
                   Style="{StaticResource ListViewStyle}"
                   SelectionChanged="KategoriListView_SelectionChanged"
-                  Grid.Column="2"
-                  Grid.Row="6"
-                  Height="150"
-                  Width="120"
-                  Grid.RowSpan="6">
+                  Grid.Column="1"
+                  Grid.Row="4"
+                  Height="240"
+                  Width="180"
+                  Grid.RowSpan="5">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Kategori" DisplayMemberBinding="{Binding Name}" />
@@ -71,11 +64,11 @@
         <ListView Name="ReceptListView" ItemsSource="{Binding Recipe}"
                   Style="{StaticResource ListViewStyle}"
                   SelectionChanged="ReceptListView_SelectionChanged"
-                  Grid.Column="3"
-                  Grid.Row="6"
-                  Grid.RowSpan="10"
+                  Grid.Column="5"
+                  Grid.Row="4"
+                  Grid.RowSpan="5"
                   Width="180"
-                  Height="280">
+                  Height="240">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Recept" DisplayMemberBinding="{Binding Name}" />
@@ -86,33 +79,37 @@
 
         <Button x:Name="RandomRecipeBtn"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="4"
-                Grid.Row="8"
+                Grid.Column="3"
+                Grid.Row="6"
+                Height="40"
                 Content="Slumpa Recept" Click="RandomRecipeBtn_Click"/>
 
         <TextBox x:Name="SearchRecipeTextBox" 
                  Style="{StaticResource TextBoxStyle}"
-                 Grid.Column="4" Grid.Row="10"
+                 Grid.Column="3" Grid.Row="7"
                  Width="200"
-                 Grid.ColumnSpan="2"
+                 
                  Text="{Binding Name}"/>
         
         <Button x:Name="SearchRecipeBtn"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="4"
-                Grid.Row="12"
+                Grid.Column="3"
+                Grid.Row="8"
+                Height="40"
                 Content="Sök Recept" Click="SearchRecipeBtn_Click"/>
 
         <Button x:Name="AddWindowBtn"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="4"
-                Grid.Row="14"
+                Grid.Column="5"
+                Grid.Row="9"
+                Height="40"
                 Content="Nytt Recept" Click="AddWindowBtn_Click"/>
 
         <Button x:Name="CategoryWindow"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="2"
-                Grid.Row="12"
+                Grid.Column="1"
+                Grid.Row="9"
+                Height="40"
                 Content="Hantera Kategorier" Click="CategoryWindow_Click" />
 
 

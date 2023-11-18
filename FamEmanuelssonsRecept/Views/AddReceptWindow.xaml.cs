@@ -31,6 +31,9 @@ namespace FamEmanuelssonsRecept.Views
             this.DataContext = this;
         }
 
+        /// <summary>
+        /// Adds a new recipe to the database with the recipe name, ingredients, description, grade, image path, and category. 
+        /// </summary>
         private async Task AddRecipe()
         {
             
@@ -45,7 +48,12 @@ namespace FamEmanuelssonsRecept.Views
             {
                 grade = 10;
             }
-           
+            if (string.IsNullOrWhiteSpace(recipeName) || string.IsNullOrWhiteSpace(ingredients) || string.IsNullOrWhiteSpace(description))
+            {
+                MessageBox.Show("Obs, fyll i alla fält!");
+                return;
+            }
+
             Recipe newRecipe = new Recipe(recipeName,ingredients, description, grade);
             
             var imagePath = ImageTextBox.Text;
@@ -78,6 +86,11 @@ namespace FamEmanuelssonsRecept.Views
             
         }
 
+        /// <summary>
+        /// Click event for Button. Opens MainWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -85,10 +98,15 @@ namespace FamEmanuelssonsRecept.Views
             this.Close();
         }
 
+        /// <summary>
+        /// Click event for AddRecipeBtn. Runs AddRecipeMethod, shows a message about recipe being added, opens MainWindow and closes this window. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void AddRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             await AddRecipe();
-            MessageBox.Show("Successfully added!");
+            MessageBox.Show("Receptet tillagt!");
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();

@@ -169,7 +169,14 @@ namespace FamEmanuelssonsRecept
         /// <param name="e"></param>
         private void SearchRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(SearchRecipeTextBox.Text))
+            {
+                MessageBox.Show("Skriv ett sökord i sökrutan ovanför!");
+            }
+            else
+            {
             SearchRecipe();
+            }
         }
     }
 }

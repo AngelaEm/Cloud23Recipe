@@ -28,11 +28,12 @@ namespace FamEmanuelssonsRecept.Views
             CategoryComboBox.ItemsSource = DbHelper.LoadCategories();
            
             this.DataContext = DbHelper.SelectedRecipe;
-
-            
+          
         }
 
-       
+        /// <summary>
+        /// Updates selected recipe information with the values entered by user and saves the changes to the database.
+        /// </summary>
         private async Task EditRecipe()
         {
             DbHelper.SelectedRecipe.Name = RecipeNameTextBox.Text;
@@ -70,27 +71,14 @@ namespace FamEmanuelssonsRecept.Views
             {
                 DbHelper.SelectedRecipe.Category = category;
             }
-
-            
+       
             await RecipeDbContext._DbContext.SaveChangesAsync();
-
         }
 
-        private async void EditRecipeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            await EditRecipe();
-
-            DbHelper.SelectedRecipe = null;
-            DbHelper.SelectedCategory = null;
-
-            MessageBox.Show("Successfully changed!");
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-
-        }
-
+        /// <summary>
+        /// Delete the selected recipe and save changes to database. Opens mainWindow and closes this window.
+        /// </summary>
+        /// <returns></returns>
         private async Task DeleteRecipe()
         {
            
@@ -106,6 +94,31 @@ namespace FamEmanuelssonsRecept.Views
 
         }
 
+        /// <summary>
+        /// Click event for EditRecipeWindow. Runs EditRecipe method and sets selectedRecipe and selectedCategory to null. Open mainWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EditRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            await EditRecipe();
+
+            DbHelper.SelectedRecipe = null;
+            DbHelper.SelectedCategory = null;
+
+            MessageBox.Show("Successfully changed!");
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+
+        }
+
+        /// <summary>
+        /// Click event for DeleteRecipeBtn. Shows a warning att let user pres yes or no. If yes the DeleteRecipe Method runs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Är du säker på att du vill ta bort detta recept?", "Bekräftelse", MessageBoxButton.YesNo, MessageBoxImage.Warning);
@@ -117,19 +130,19 @@ namespace FamEmanuelssonsRecept.Views
             else
             {
                 return;
-            }
-
-            
+            }         
         }
 
+        /// <summary>
+        /// Click event for Button. Opens MainWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
-
-
-
     }
 }

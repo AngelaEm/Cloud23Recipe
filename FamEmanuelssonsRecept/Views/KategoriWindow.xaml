@@ -52,7 +52,8 @@
                Width="150"
                Height="100"/>
 
-        <Label Grid.Column="2"
+        <Label Style="{StaticResource LabelStyle}"
+               Grid.Column="2"
                Grid.Row="6"
                Content="Skriv in ny kategori:"/>
 
@@ -64,6 +65,7 @@
                  Grid.RowSpan="2"/>
 
         <ListView x:Name="CategoryListView"  ItemsSource="{Binding Category}" 
+                  Style="{StaticResource ListViewStyle}"
                   Grid.Column="3"
                   Grid.Row="6"
                   Grid.RowSpan="10"

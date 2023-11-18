@@ -43,4 +43,39 @@
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
+    <!-- LabelStyle -->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource TextColorBrush}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!-- ComboBoxStyle -->
+    <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Foreground" Value="{StaticResource TextColorBrush}"/>
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+    </Style>
+
+
+    <!-- ListViewStyle -->
+    <Style x:Key="ListViewStyle" TargetType="ListView">
+        <Setter Property="Foreground" Value="{StaticResource TextColorBrush}"/>
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+
+
 </ResourceDictionary>

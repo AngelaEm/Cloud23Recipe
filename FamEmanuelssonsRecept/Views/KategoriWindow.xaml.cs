@@ -32,7 +32,11 @@ namespace FamEmanuelssonsRecept.Windows
             this.DataContext = this;
 
         }
-      
+
+        /// <summary>
+        /// Adds a new category to database and updates category listView.
+        /// </summary>
+        /// <returns></returns>
         private async Task AddCategory()
         {
             try
@@ -55,18 +59,17 @@ namespace FamEmanuelssonsRecept.Windows
                     MessageBox.Show("Glöm inte att namnge din kategori!");
                     return;
                 }
-
             }
             catch (Exception)
             {
                 MessageBox.Show("Det gick inte att lägga till nu. Var god försök senare.");              
-            }
-            
-
-            
-           
+            }                    
         }
 
+        /// <summary>
+        ///  Delete category from database and updates category listView.
+        /// </summary>
+        /// <returns></returns>
         private async Task DeleteCategory()
         {
             var selectedCategory = CategoryListView.SelectedItem as Category;
@@ -83,30 +86,41 @@ namespace FamEmanuelssonsRecept.Windows
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Denna kategori har recept kopplade till sig. Vänligen ta bort dessa recept innan du tar bort kategorin.");
                 }          
             }
         }
 
-
+        /// <summary>
+        /// Click event for AddCategoryBtn. Runs AddCategory Method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void AddCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             await AddCategory();
         }
 
-
+        /// <summary>
+        /// Click event for RemoveCategoryBtn. Runs DeleteCategory Method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void RemoveCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             await DeleteCategory();
         }
 
+        /// <summary>
+        /// Click event for MainWindowBtn. Opens MainWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainWindowBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
-
         }
     }
 }

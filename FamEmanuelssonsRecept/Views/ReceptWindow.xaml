@@ -50,6 +50,7 @@
                Height="120"/>
 
         <Label Content="Ingredienser:"
+                Style="{StaticResource LabelStyle}"
                Grid.Column="2"
                Grid.Row="6"
                HorizontalContentAlignment="Center"/>
@@ -66,6 +67,7 @@
                  Text="{Binding Ingredients}"/>
 
         <Label Content="Betyg:"
+               Style="{StaticResource LabelStyle}"
                Grid.Column="3"
                Grid.Row="6"
                Width="200"
@@ -101,6 +103,7 @@
         
 
         <Label Content="Gör så här:"
+               Style="{StaticResource LabelStyle}"
                Grid.Column="4"
                Grid.Row="6"
                HorizontalContentAlignment="Center"/>
@@ -115,9 +118,6 @@
                  Width="200"
                  Height="200"
                  Text="{Binding Description}"/>
-
-        
-
 
     </Grid>
 </Window>

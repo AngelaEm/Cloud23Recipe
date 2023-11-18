@@ -29,6 +29,11 @@ namespace FamEmanuelssonsRecept.Windows
             this.DataContext = DbHelper.SelectedRecipe;
         }
 
+        /// <summary>
+        /// Click event for MainWindowBtn. Opens mainWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainWindowBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -36,6 +41,11 @@ namespace FamEmanuelssonsRecept.Windows
             this.Close();
         }
 
+        /// <summary>
+        /// Click event for EditWindowBtn. Opens EditWindow and closes this window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditWindowBtn_Click(object sender, RoutedEventArgs e)
         {
             EditWindow editWindow = new EditWindow();

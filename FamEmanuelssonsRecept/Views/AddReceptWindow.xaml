@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamEmanuelssonsRecept.Views"
         mc:Ignorable="d" Background="#84a98c"
-        Title="AddReceptWindow" Height="550" Width="650"
+        Title="AddReceptWindow" Height="600" Width="650"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -42,54 +42,61 @@
 
 
         <Label Content="Receptnamn:" 
+               Style="{StaticResource LabelStyle}"
                Grid.Column="2" Grid.Row="2"/>
+
         <TextBox x:Name="RecipeNameTextBox" 
                  Style="{StaticResource TextBoxStyle}"
                  Grid.Column="2" Grid.Row="3"/>
 
-
         <Label Content="Bildlänk:" 
+               Style="{StaticResource LabelStyle}"
                Grid.Column="2" Grid.Row="4"/>
+
         <TextBox x:Name="ImageTextBox" 
                  Style="{StaticResource TextBoxStyle}"
                  Grid.Column="2" Grid.Row="5"/>
 
-
         <Label Content="Kategori:" 
+               Style="{StaticResource LabelStyle}"
                Grid.Column="2" Grid.Row="6"/>
-        <ComboBox x:Name="CategoryComboBox" 
-                  Grid.Column="2" 
-                  Grid.Row="7"
-                  
-                  DisplayMemberPath="Name"
-                  />
 
+        <ComboBox x:Name="CategoryComboBox" 
+                  Style="{StaticResource ComboBoxStyle}"
+                  Grid.Column="2" 
+                  Grid.Row="7"              
+                  DisplayMemberPath="Name"/>
 
         <Label Content="Ingredienser:" 
+               Style="{StaticResource LabelStyle}"
                Grid.Column="2" Grid.Row="8"/>
+
         <TextBox x:Name="IngredientsTextBox" 
                  Style="{StaticResource TextBoxStyle}"
+                 VerticalScrollBarVisibility="Auto"
                  Grid.Column="2" Grid.Row="9" 
                  Grid.RowSpan="5" Height="100" 
                  TextWrapping="Wrap" AcceptsReturn="True"/>
 
-
         <Label Content="Beskrivning:" 
-               Grid.Column="4" Grid.Row="7"/>
+               Style="{StaticResource LabelStyle}"
+               Grid.Column="4" Grid.Row="5"/>
+
         <TextBox x:Name="DescriptionTextBox" 
                  Style="{StaticResource TextBoxStyle}"
-                 Grid.Column="4" Grid.Row="8" 
+                 VerticalScrollBarVisibility="Auto"
+                 Grid.Column="4" Grid.Row="6" 
                  Grid.RowSpan="6"
                  Height="150" TextWrapping="Wrap" 
                  AcceptsReturn="True"/>
 
-
         <Label Content="Betyg:" 
+               Style="{StaticResource LabelStyle}"
                Grid.Column="4" Grid.Row="2"/>
+
         <TextBox x:Name="GradeTextBox"
                  Style="{StaticResource TextBoxStyle}"
                  Grid.Column="4" Grid.Row="3" />
-
 
         <Button x:Name="AddRecipeBtn"
                 Style="{StaticResource ButtonStyle}"
@@ -100,10 +107,9 @@
 
         <Button Content="Tillbaka" 
                 Style="{StaticResource ButtonStyle}"
-                Grid.Column="4" Grid.Row="15" 
+                Grid.Column="4" Grid.Row="13" 
                 Height="40" 
                 Click="Button_Click" />
-
 
     </Grid>
 </Window>

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\applepie.png" />
     <None Remove="Images\bananpannkakor.png" />
     <None Remove="Images\biffcurry.png" />
     <None Remove="Images\calzone.png" />
@@ -22,6 +23,7 @@
     <None Remove="Images\quorn.png" />
     <None Remove="Images\tacoGratang.png" />
     <None Remove="Images\tagliatelleFlaskfile.png" />
+    <None Remove="Images\tofuwok.png" />
     <None Remove="Images\vegetariskLasagne.png" />
   </ItemGroup>
 
@@ -35,6 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\applepie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\bananpannkakor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -75,6 +80,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\tagliatelleFlaskfile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tofuwok.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\vegetariskLasagne.png">

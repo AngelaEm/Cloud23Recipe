@@ -108,7 +108,17 @@ namespace FamEmanuelssonsRecept.Windows
         /// <param name="e"></param>
         private async void RemoveCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            await DeleteCategory();
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill ta bort denna kategori?", "Bekräftelse", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                await DeleteCategory();
+            }
+            else
+            {
+                return;
+            }
+            
         }
 
         /// <summary>

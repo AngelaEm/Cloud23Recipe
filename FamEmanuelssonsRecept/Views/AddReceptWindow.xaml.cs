@@ -106,7 +106,7 @@ namespace FamEmanuelssonsRecept.Views
         private async void AddRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             await AddRecipe();
-            MessageBox.Show("Receptet tillagt!");
+            MessageBox.Show($"Recept {RecipeNameTextBox.Text} tillagt!");
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();

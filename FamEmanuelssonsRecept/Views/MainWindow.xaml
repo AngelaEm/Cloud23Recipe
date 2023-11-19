@@ -43,8 +43,8 @@
                Grid.Column="1"
                Grid.ColumnSpan="5"
                Grid.Row="3"
-               Width="180"
-               Height="120"/>
+               Width="200"
+               Height="140"/>
         
         <ListView x:Name="KategoriListView"  ItemsSource="{Binding Category}" 
                   Style="{StaticResource ListViewStyle}"
@@ -52,7 +52,7 @@
                   Grid.Column="1"
                   Grid.Row="4"
                   Height="240"
-                  Width="180"
+                  Width="200"
                   Grid.RowSpan="5">
             <ListView.View>
                 <GridView>
@@ -60,22 +60,32 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
+     
         <ListView Name="ReceptListView" ItemsSource="{Binding Recipe}"
-                  Style="{StaticResource ListViewStyle}"
-                  SelectionChanged="ReceptListView_SelectionChanged"
-                  Grid.Column="5"
-                  Grid.Row="4"
-                  Grid.RowSpan="5"
-                  Width="180"
-                  Height="240">
+          Style="{StaticResource ListViewStyle}"
+          SelectionChanged="ReceptListView_SelectionChanged"
+          Grid.Column="5"
+          Grid.Row="4"
+          Grid.RowSpan="5"
+          Width="200"
+          Height="240">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Recept" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Recept">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ImagePath}" Width="30" Height="30" Margin="3"/>
+                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-     
+
+
 
         <Button x:Name="RandomRecipeBtn"
                 Style="{StaticResource ButtonStyle}"

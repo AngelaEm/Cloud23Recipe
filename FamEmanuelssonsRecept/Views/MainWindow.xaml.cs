@@ -69,6 +69,7 @@ namespace FamEmanuelssonsRecept
             try
             {
                 var searchResult = RecipeDbContext._DbContext._Recipes.ToList().FindAll(r => r.Ingredients.ToLower().Contains(searchWord.ToLower()));
+
                 if (searchResult.Count > 0)
                 {
                     ReceptListView.ItemsSource = searchResult.ToList();

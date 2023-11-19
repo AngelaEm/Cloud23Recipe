@@ -14,7 +14,11 @@ namespace FamEmanuelssonsRecept
     {
         public static Category SelectedCategory { get; set; }
         public static Recipe SelectedRecipe { get; set; }
-
+         
+        /// <summary>
+        /// Load all categories from database as a list
+        /// </summary>
+        /// <returns>List with all categories</returns>
         public static List<Category> LoadCategories()
         {
             
@@ -22,6 +26,10 @@ namespace FamEmanuelssonsRecept
             return categories;
         }
 
+        /// <summary>
+        /// Load all racipes fron database as list
+        /// </summary>
+        /// <returns>List with all recipes</returns>
         public static List<Recipe> LoadRecipes()
         {
             var recipes = RecipeDbContext._DbContext._Recipes.ToList();

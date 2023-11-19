@@ -9,14 +9,18 @@
 
   <ItemGroup>
     <None Remove="Images\applepie.png" />
+    <None Remove="Images\asiatiskFars.png" />
     <None Remove="Images\bananpannkakor.png" />
     <None Remove="Images\biffcurry.png" />
     <None Remove="Images\calzone.png" />
     <None Remove="Images\cornFlakesKakor.png" />
+    <None Remove="Images\currykyckling.png" />
     <None Remove="Images\familjen.png" />
     <None Remove="Images\halloumiStroganoff.png" />
     <None Remove="Images\kokostoppar.png" />
+    <None Remove="Images\kycklinfars.png" />
     <None Remove="Images\Laxwraps.png" />
+    <None Remove="Images\limepie.png" />
     <None Remove="Images\middag.png" />
     <None Remove="Images\overnightOats.png" />
     <None Remove="Images\padThai.png" />
@@ -40,6 +44,9 @@
     <Content Include="Images\applepie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\asiatiskFars.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\bananpannkakor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -52,6 +59,9 @@
     <Content Include="Images\cornFlakesKakor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\currykyckling.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\familjen.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -61,7 +71,13 @@
     <Content Include="Images\kokostoppar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\kycklinfars.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Laxwraps.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\limepie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\middag.png">

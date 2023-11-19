@@ -106,7 +106,7 @@ namespace FamEmanuelssonsRecept.Views
             DbHelper.SelectedRecipe = null;
             DbHelper.SelectedCategory = null;
 
-            MessageBox.Show("Successfully changed!");
+            MessageBox.Show("Receptet är ändrat!");
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

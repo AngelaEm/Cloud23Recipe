@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamEmanuelssonsRecept.Windows"
         mc:Ignorable="d" Background="#84a98c"
-        Title="KategoriWindow" Height="550" Width="650"
+        Title="KategoriWindow" Height="550" Width="750"
         WindowStartupLocation="CenterScreen">
     
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
            
@@ -45,17 +45,19 @@
         <TextBlock Text="Fam Emanuelssons Receptsamling"
                    Style="{StaticResource BasicTextStyle}"
                    Grid.Column="1" Grid.ColumnSpan="5"
+                   Margin="85,0,0,0"
                    Grid.Row="2" FontSize="30"/>
         
         <Image Source="/Images/familjen.png"
                Grid.Column="3"
                Grid.Row="4"
-               Width="150"
+               Width="180"
                Height="100"/>
 
         <Label Style="{StaticResource LabelStyle}"
                Grid.Column="1"
                Grid.Row="6"
+               Width="180"
                Content="Skriv in ny kategori:"/>
 
         <TextBox x:Name="CategoryTextBox"
@@ -70,7 +72,7 @@
                   Grid.Column="3"
                   Grid.Row="6"
                   Grid.RowSpan="10"
-                  Width="150"
+                  Width="180"
                   Height="220">
             <ListView.View>
                 <GridView>
@@ -92,6 +94,7 @@
                 Grid.Column="5"
                 Grid.Row="10"
                 Height="40"
+                Width="180"
                 Content="Ta bort Kategori" Click="RemoveCategoryBtn_Click"/>
 
         <Button x:Name="MainWindowBtn"

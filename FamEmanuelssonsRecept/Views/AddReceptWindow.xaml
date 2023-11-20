@@ -11,9 +11,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -87,7 +87,8 @@
                  VerticalScrollBarVisibility="Auto"
                  Grid.Column="4" Grid.Row="6" 
                  Grid.RowSpan="6"
-                 Height="150" TextWrapping="Wrap" 
+                 Height="150" 
+                 TextWrapping="Wrap" 
                  AcceptsReturn="True"/>
 
         <Label Content="Betyg:" 

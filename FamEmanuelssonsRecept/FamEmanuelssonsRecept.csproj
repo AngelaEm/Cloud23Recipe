@@ -13,6 +13,7 @@
     <None Remove="Images\bananpannkakor.png" />
     <None Remove="Images\biffcurry.png" />
     <None Remove="Images\calzone.png" />
+    <None Remove="Images\chili.png" />
     <None Remove="Images\cornFlakesKakor.png" />
     <None Remove="Images\currykyckling.png" />
     <None Remove="Images\familjen.png" />
@@ -25,6 +26,7 @@
     <None Remove="Images\middag.png" />
     <None Remove="Images\overnightOats.png" />
     <None Remove="Images\padThai.png" />
+    <None Remove="Images\pastapronto.png" />
     <None Remove="Images\quorn.png" />
     <None Remove="Images\tacoGratang.png" />
     <None Remove="Images\tagliatelleFlaskfile.png" />
@@ -93,6 +95,9 @@
     <Content Include="Images\padThai.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pastapronto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\quorn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -108,6 +113,12 @@
     <Content Include="Images\vegetariskLasagne.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\chili.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

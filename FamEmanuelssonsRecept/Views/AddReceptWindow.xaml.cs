@@ -60,7 +60,7 @@ namespace FamEmanuelssonsRecept.Views
 
             if (!string.IsNullOrWhiteSpace(imagePath))
             {
-                newRecipe.ImagePath = imagePath;
+                newRecipe.ImagePath = SetRecipeImage(imagePath);
             }
             else
             {
@@ -85,6 +85,37 @@ namespace FamEmanuelssonsRecept.Views
             await RecipeDbContext._DbContext.SaveChangesAsync();
             
         }
+
+        /// <summary>
+        /// Sets question image based on image path
+        /// </summary>
+        /// <param name="imagePath">The path to the image file</param>
+        private string SetRecipeImage(string imagePath)
+        {
+            try
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                if (imagePath.StartsWith("http://") || imagePath.StartsWith("https://"))
+                {
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                }
+
+                image.EndInit();
+                return imagePath;
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Det gick inte att ladda bilden: {ex.Message}");
+                return null;
+            }
+
+        }
+
+
 
         /// <summary>
         /// Click event for Button. Opens MainWindow and closes this window.

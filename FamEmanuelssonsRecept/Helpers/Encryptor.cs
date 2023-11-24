@@ -10,9 +10,11 @@ namespace FamEmanuelssonsRecept.Helpers
 {
     public class Encryptor
     {
+        private static readonly string EncryptionKey = Environment.GetEnvironmentVariable("ENCRYPTION_KEY");
+
         private static string Decrypt(string cipherText)
         {
-            string EncryptionKey = ""; 
+            
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {

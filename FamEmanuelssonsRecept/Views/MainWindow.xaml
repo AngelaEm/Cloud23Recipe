@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamEmanuelssonsRecept"
-        mc:Ignorable="d" Background="#84a98c"
+        mc:Ignorable="d" Background="#bcccdb"
         Title="MainWindow" Height="600" Width="850"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -34,12 +34,12 @@
         </Grid.RowDefinitions>
 
         <TextBlock Style="{StaticResource BasicTextStyle}"
-                   Text="Fam Emanuelssons Receptsamling"
-                   Grid.Column="1" Grid.ColumnSpan="5"
-                   Margin="70,0,0,0"
+                   Text="Cloud 23:s Receptsamling"
+                   Grid.Column="1" Grid.ColumnSpan="4"
+                   Margin="199,0,0,0"
                    Grid.Row="1" FontSize="30"/>
         
-        <Image Source="/Images/familjen.png"
+        <Image Source="/Images/middag.png"
                Grid.Column="1"
                Grid.ColumnSpan="5"
                Grid.Row="3"

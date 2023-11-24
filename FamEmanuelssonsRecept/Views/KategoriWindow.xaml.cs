@@ -1,4 +1,5 @@
 ﻿using FamEmanuelssonsRecept.Db;
+using FamEmanuelssonsRecept.Helpers;
 using FamEmanuelssonsRecept.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,8 +22,7 @@ namespace FamEmanuelssonsRecept.Windows
     /// Interaction logic for KategoriWindow.xaml
     /// </summary>
     public partial class KategoriWindow : Window
-    {
-       
+    {      
         public KategoriWindow()
         {
             InitializeComponent();

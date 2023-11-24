@@ -1,4 +1,5 @@
 ﻿using FamEmanuelssonsRecept.Db;
+using FamEmanuelssonsRecept.Helpers;
 using FamEmanuelssonsRecept.Models;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,8 @@ namespace FamEmanuelssonsRecept.Views
             }
             else
             {
-                DbHelper.SelectedRecipe.Grade = 10;
+                MessageBox.Show("Ogiltigt betyg angivet. Betyget har satts till 0."); 
+                DbHelper.SelectedRecipe.Grade = 0;
             }
 
             var imagePath = ImageTextBox.Text;

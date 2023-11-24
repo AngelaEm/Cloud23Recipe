@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamEmanuelssonsRecept.Windows"
-        mc:Ignorable="d" Background="#84a98c"
+        mc:Ignorable="d" Background="#bcccdb"
         Title="ReceptWindow" Height="550" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -59,6 +59,7 @@
                  Style="{StaticResource TextBoxStyle}"
                  AcceptsReturn="True" 
                  TextWrapping="Wrap" 
+                 IsReadOnly="True"
                  VerticalScrollBarVisibility="Auto"
                  Grid.Column="2"
                  Grid.Row="7"
@@ -80,6 +81,7 @@
                      Width="90"
                      Height="90"
                      Text="{Binding Grade}"
+                     IsReadOnly="True"
                      FontSize="50"
                      Foreground="#52796f"
                      HorizontalAlignment="Center"

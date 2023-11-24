@@ -1,4 +1,5 @@
 ﻿using FamEmanuelssonsRecept.Db;
+using FamEmanuelssonsRecept.Helpers;
 using FamEmanuelssonsRecept.Models;
 using System;
 using System.Collections.Generic;
@@ -44,10 +45,16 @@ namespace FamEmanuelssonsRecept.Views
 
             double grade;
 
-            if (!double.TryParse(gradeTextBox, out grade))
+            if (double.TryParse(gradeTextBox, out grade))
             {
-                grade = 10;
+                DbHelper.SelectedRecipe.Grade = grade;
             }
+            else
+            {
+                MessageBox.Show("Ogiltigt betyg angivet. Betyget har satts till 0!");
+                                
+            }
+
             if (string.IsNullOrWhiteSpace(recipeName) || string.IsNullOrWhiteSpace(ingredients) || string.IsNullOrWhiteSpace(description))
             {
                 MessageBox.Show("Obs, fyll i alla fält!");
@@ -113,20 +120,28 @@ namespace FamEmanuelssonsRecept.Views
                 return null;
             }
 
-        }
-
-
+        }      
 
         /// <summary>
-        /// Click event for Button. Opens MainWindow and closes this window.
+        /// Click event for Button with a reminder to add recipe. Opens MainWindow and closes this window.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill gå tillbaka? Har du lagt till receptet?", "Bekräftelse", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+           
         }
 
         /// <summary>

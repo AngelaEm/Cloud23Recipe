@@ -1,10 +1,14 @@
-﻿using FamEmanuelssonsRecept.Models;
+﻿using FamEmanuelssonsRecept.Helpers;
+using FamEmanuelssonsRecept.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace FamEmanuelssonsRecept.Db
 {
@@ -29,9 +33,8 @@ namespace FamEmanuelssonsRecept.Db
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FamEmanuelssonsRecept;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            options.UseSqlServer(Encryptor.GetConnectionString());
         }
 
-
-    }
+}
 }

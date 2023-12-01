@@ -39,7 +39,7 @@
                    Margin="199,0,0,0"
                    Grid.Row="1" FontSize="30"/>
         
-        <Image Source="/Images/middag.png"
+        <Image Source="/Images/cloud.JPG"
                Grid.Column="1"
                Grid.ColumnSpan="5"
                Grid.Row="3"

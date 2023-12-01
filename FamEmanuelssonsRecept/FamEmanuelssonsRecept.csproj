@@ -14,6 +14,7 @@
     <None Remove="Images\biffcurry.png" />
     <None Remove="Images\calzone.png" />
     <None Remove="Images\chili.png" />
+    <None Remove="Images\cloud.JPG" />
     <None Remove="Images\cornFlakesKakor.png" />
     <None Remove="Images\currykyckling.png" />
     <None Remove="Images\familjen.png" />
@@ -117,6 +118,9 @@
 
   <ItemGroup>
     <Resource Include="Images\chili.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\cloud.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

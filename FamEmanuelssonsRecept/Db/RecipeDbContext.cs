@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace FamEmanuelssonsRecept.Db
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(Encryptor.GetConnectionString());
+            options.UseSqlServer(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
         }
 
 }
